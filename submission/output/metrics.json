@@ -1,0 +1,115 @@
+{
+  "per_type": {
+    "EMAIL": {
+      "tp": 104,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "gold": 104,
+      "fp_boundary": 0
+    },
+    "PHONE": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "gold": 36,
+      "fp_boundary": 0
+    },
+    "SSN": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "gold": 0,
+      "fp_boundary": 0
+    },
+    "CREDIT_CARD": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "gold": 0,
+      "fp_boundary": 0
+    },
+    "IP_ADDRESS": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "gold": 0,
+      "fp_boundary": 0
+    },
+    "PERSON": {
+      "tp": 221,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "gold": 221,
+      "fp_boundary": 0
+    },
+    "ORG": {
+      "tp": 301,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "gold": 301,
+      "fp_boundary": 0
+    },
+    "ADDRESS": {
+      "tp": 86,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "gold": 86,
+      "fp_boundary": 0
+    },
+    "DOB": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "gold": 0,
+      "fp_boundary": 0
+    }
+  },
+  "note": "exact match of (segment, start, end, type); n/a = zero denominator",
+  "overall_micro": {
+    "tp": 748,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "gold": 748
+  },
+  "character_level": {
+    "tp": 16983,
+    "fp": 0,
+    "fn": 0,
+    "tn": 269684,
+    "non_whitespace_chars": 286667,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  }
+}
