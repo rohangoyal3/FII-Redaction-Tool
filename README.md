@@ -2,8 +2,6 @@
 
 A Python tool for redacting personally identifiable information (PII) from Word `.docx` documents. It includes a command-line redactor, a Streamlit upload page, an evaluation script, and a self-check.
 
-**Live demo:** [Open the app](https://YOUR-RENDER-SERVICE.onrender.com)
-
 ## Features
 
 - Upload a `.docx` in the web app and download its redacted version.
