@@ -1,0 +1,112 @@
+{
+  "distinct_gold_values": {
+    "PHONE": 22,
+    "ORG": 99,
+    "PERSON": 66,
+    "EMAIL": 27,
+    "ADDRESS": 64
+  },
+  "values_still_present_in_output_text": {
+    "PHONE": 0,
+    "ORG": 2,
+    "PERSON": 0,
+    "EMAIL": 0,
+    "ADDRESS": 2
+  },
+  "occurrences_beyond_non_pii_contexts": {
+    "PHONE": 0,
+    "ORG": 0,
+    "PERSON": 0,
+    "EMAIL": 0,
+    "ADDRESS": 0
+  },
+  "note": "a value still present only in non-PII contexts of the source (e.g. a state name) is not a leak",
+  "structure_source": {
+    "p": 4864,
+    "tbl": 76,
+    "tr": 878,
+    "tc": 3225,
+    "drawing": 88,
+    "sectPr": 85,
+    "txbxContent": 156,
+    "instrText": 263,
+    "hyperlink": 0,
+    "parts": 168,
+    "media": 8
+  },
+  "structure_output": {
+    "p": 4864,
+    "tbl": 76,
+    "tr": 878,
+    "tc": 3225,
+    "drawing": 88,
+    "sectPr": 85,
+    "txbxContent": 156,
+    "instrText": 263,
+    "hyperlink": 0,
+    "parts": 168,
+    "media": 8
+  },
+  "structure_identical": true,
+  "zip_test_ok": true,
+  "xml_parts_parsed": 155,
+  "xml_parse_failures": [],
+  "media": [
+    {
+      "part": "word/media/image1.jpeg",
+      "changed": true,
+      "ocr_chars_after": 0,
+      "pii_hits_after": 0
+    },
+    {
+      "part": "word/media/image1.png",
+      "changed": true,
+      "ocr_chars_after": 0,
+      "pii_hits_after": 0
+    },
+    {
+      "part": "word/media/image2.jpeg",
+      "changed": true,
+      "ocr_chars_after": 0,
+      "pii_hits_after": 0
+    },
+    {
+      "part": "word/media/image3.jpeg",
+      "changed": true,
+      "ocr_chars_after": 0,
+      "pii_hits_after": 0
+    },
+    {
+      "part": "word/media/image2.png",
+      "changed": true,
+      "ocr_chars_after": 0,
+      "pii_hits_after": 0
+    },
+    {
+      "part": "word/media/image3.png",
+      "changed": true,
+      "ocr_chars_after": 0,
+      "pii_hits_after": 0
+    },
+    {
+      "part": "word/media/image4.png",
+      "changed": true,
+      "ocr_chars_after": 0,
+      "pii_hits_after": 0
+    },
+    {
+      "part": "word/media/image5.png",
+      "changed": true,
+      "ocr_chars_after": 0,
+      "pii_hits_after": 0
+    }
+  ],
+  "render": {
+    "source": {
+      "pages": 128
+    },
+    "output": {
+      "pages": 125
+    }
+  }
+}
