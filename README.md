@@ -1,77 +1,107 @@
 # PII Redaction Tool
 
-A Python command-line tool for redacting personally identifiable information (PII) from Word `.docx` documents. It produces a redacted document and a JSON report. The project also includes gold annotations, an evaluator, and a self-check.
+A Python tool for redacting personally identifiable information (PII) from Word `.docx` documents. It includes a command-line redactor, a Streamlit upload page, an evaluation script, and a self-check.
 
-## Contents
+**Live demo:** [Open the app](https://YOUR-RENDER-SERVICE.onrender.com)
 
-- `redact_docx.py` — redacts a Word document.
-- `evaluate.py` — evaluates redaction results against the gold annotations.
-- `test_redact.py` — runs the project’s self-check.
-- `gold/gold_labels.json` — annotated reference labels used for evaluation.
-- `output/` — generated redacted document, report, metrics, and QA results.
-- `EVALUATION.md` — evaluation method, results, checks, and limitations.
-- `requirements.txt` — Python package dependencies.
+## Features
 
-## Requirements
+- Upload a `.docx` in the web app and download its redacted version.
+- Run redaction from the command line.
+- Generate a JSON report for a redaction run.
+- Evaluate results against the project’s gold labels.
+- Review evaluation metrics and QA results in `output/`.
+
+The categories covered and the redaction policy are described in the project code and `EVALUATION.md`.
+
+## Run locally
 
 Use the Python version recorded in `EVALUATION.md`.
 
-Install the dependencies in a virtual environment:
-
-```bash
-python -m venv .venv
-```
-
-On Windows, activate it with:
+Create and activate a virtual environment on Windows:
 
 ```powershell
+python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
-Then install the dependencies:
+Install dependencies:
 
-```bash
+```powershell
 python -m pip install -r requirements.txt
 ```
 
-The `.venv` folder is local to your computer and should not be uploaded to GitHub.
+Start the web app:
 
-## Use
+```powershell
+streamlit run app.py
+```
 
-Check the available command-line options:
+## Command-line use
 
-```bash
+See the available options:
+
+```powershell
 python redact_docx.py --help
 ```
 
 Example, if the input document is provided as the first argument:
 
-```bash
+```powershell
 python redact_docx.py input.docx --output output/redacted.docx --report output/report.json
 ```
 
-Use the exact argument format shown by `--help`. Choose output and report paths that do not overwrite the source document.
+Use the exact argument format shown by `--help`. Keep the original document separate from the output and report paths.
 
-## Run the self-check
+## Evaluation and self-check
 
-```bash
+Run the self-check:
+
+```powershell
 python test_redact.py
 ```
 
-For evaluator usage and the exact evaluation command, see:
+See the evaluator’s available options:
 
-```bash
+```powershell
 python evaluate.py --help
 ```
 
-The evaluation method and results are documented in `EVALUATION.md`. Results depend on using the same source document as the one associated with the gold labels.
+Evaluation methodology, metrics, QA checks, and known limitations are documented in `EVALUATION.md`. To reproduce the evaluation, use the matching source document identified there by its SHA-256 hash.
 
-## Source document and privacy
+## Project files
 
-The original prospectus is not included in this repository. To reproduce the evaluation, obtain the matching source document privately and verify its SHA-256 hash against the value documented in `EVALUATION.md`.
+```text
+.
+├── app.py
+├── redact_docx.py
+├── evaluate.py
+├── test_redact.py
+├── requirements.txt
+├── README.md
+├── EVALUATION.md
+├── gold/
+│   └── gold_labels.json
+└── output/
+    ├── Red_Herring_Prospectus_redacted.docx
+    ├── Red_Herring_Prospectus_redacted.report.json
+    ├── metrics.json
+    └── qa.json
+```
 
-Before sharing this repository publicly, review `gold/gold_labels.json`, the JSON report, and all generated files. They may contain text derived from the source document. Do not upload the original, unredacted prospectus.
+The original prospectus and the local `.venv/` environment are not included.
 
-## Limitations
+## Deploy on Render
 
-Redaction quality depends on the detection rules, document structure, and project policy described in `EVALUATION.md`. Text embedded in images may need separate review. Check the evaluation and QA reports before relying on an output document.
+The app is deployed as a Render web service connected to this GitHub repository. The service uses:
+
+- **Build command:** `pip install -r requirements.txt`
+- **Start command:** `streamlit run app.py --server.address 0.0.0.0 --server.port $PORT --server.headless true`
+
+Pushes to the connected GitHub branch trigger deployments. See [Render’s web service documentation](https://render.com/docs/web-services).
+
+## Privacy
+
+Use synthetic or otherwise non-sensitive documents in the public demo. Do not upload the original, unredacted prospectus to this repository or the demo.
+
+Gold labels and reports can contain text derived from the source document. Review them before sharing publicly, and only keep them in a public repository if their contents are approved for public release.
